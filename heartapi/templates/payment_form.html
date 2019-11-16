@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block body %}
+ <section class="breadcrumb_part breadcrumb_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb_iner">
+                      
+                        <div class="breadcrumb_iner_item">
+                            <h2>Pay</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+  </section>
+
+
+  <section class="contact-section section_padding">
+    <div class="container">
+      
+
+      <div class="row">
+        <div class="col-12">
+          <h2 class="contact-title">Get the Subscription</h2>
+        </div>
+        <div class="col-lg-8">
+          <h1> Get yourself insured from the unpredicted
+          <form action="" method="POST">
+              {% csrf_token %}
+          <script
+            src="https://checkout.razorpay.com/v1/checkout.js"
+            data-key="rzp_test_HNcMCOUHPcHzn3"
+            data-amount="3500000"
+            data-name="Daft Punk"
+            data-description="Purchase Description"
+            data-image="vk.jpg"
+            data-netbanking="true"
+            data-description="Tron Legacy"
+            data-prefill.name="Harshil Mathur"
+            data-prefill.email="harshil@razorpay.com"
+            data-prefill.contact="9999999999"
+            data-notes.shopping_order_id="21">
+          </script>
+          <input type="hidden" name="shopping_order_id" value="21">
+      </form>
+        </div>
+        <div>
+            {% for message in messages %}
+            <h3> {{message}}</h3>
+            {% endfor %}
+        </div>
+        <div class="col-lg-4">
+          
+        </div>
+      </div>
+    </div>
+  </section>  
+
+{% endblock %}
+
+
